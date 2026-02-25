@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #1B2A4A; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #1B2A4A; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  margin: 20pt 40pt 0 40pt;
+}
+.header h1 {
+  color: #FFFFFF; font-size: 26pt; margin: 0 0 4pt 0;
+}
+.header-line {
+  width: 60pt; height: 3pt; background: #0E8388;
+}
+.metrics {
+  display: flex; flex-direction: row; flex-wrap: wrap;
+  margin: 14pt 36pt 0 36pt;
+}
+.metric {
+  width: 196pt; margin: 4pt; background: #243554;
+  border-radius: 8pt; padding: 10pt 14pt;
+  text-align: center;
+}
+.metric h2 {
+  color: #0E8388; font-size: 26pt; margin: 0 0 2pt 0;
+}
+.metric p {
+  color: #CCDDEE; font-size: 10pt; margin: 0;
+}
+.metric-accent h2 { color: #E76F51; }
+.bottom {
+  margin: 10pt 40pt 0 40pt;
+}
+.install-box {
+  background: #243554; border-radius: 6pt; padding: 8pt 20pt;
+  border: 1pt solid #0E8388;
+}
+.install-box p {
+  color: #0E8388; font-size: 14pt; margin: 0;
+  text-align: center; font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Current State</h1>
+  <div class="header-line"></div>
+</div>
+
+<div class="metrics">
+  <div class="metric">
+    <h2>~1,750</h2>
+    <p>Lines of production code</p>
+  </div>
+  <div class="metric">
+    <h2>~1,300</h2>
+    <p>Lines of test code</p>
+  </div>
+  <div class="metric metric-accent">
+    <h2>109</h2>
+    <p>Tests, all passing</p>
+  </div>
+  <div class="metric">
+    <h2>27</h2>
+    <p>Event types (full UCP)</p>
+  </div>
+  <div class="metric">
+    <h2>3</h2>
+    <p>Transports (REST, MCP, A2A)</p>
+  </div>
+  <div class="metric metric-accent">
+    <h2>9</h2>
+    <p>Runnable demos</p>
+  </div>
+</div>
+
+<div class="bottom">
+  <div class="install-box">
+    <p>pip install ucp-analytics</p>
+  </div>
+</div>
+</body>
+</html>

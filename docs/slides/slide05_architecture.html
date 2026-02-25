@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #1B2A4A; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #1B2A4A; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  margin: 24pt 40pt 0 40pt;
+}
+.header h1 {
+  color: #FFFFFF; font-size: 26pt; margin: 0 0 4pt 0;
+}
+.header-line {
+  width: 60pt; height: 3pt; background: #0E8388; margin: 0 0 0 0;
+}
+.pipeline {
+  display: flex; flex-direction: column; align-items: center;
+  margin: 16pt 40pt 0 40pt;
+}
+.step {
+  display: flex; flex-direction: row; align-items: center;
+  margin-bottom: 4pt; width: 540pt;
+}
+.step-number {
+  width: 32pt; height: 32pt; background: #0E8388; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-right: 14pt;
+}
+.step-number p {
+  color: #FFFFFF; font-size: 15pt; font-weight: bold; margin: 0;
+  text-align: center;
+}
+.step-box {
+  background: #243554; border-radius: 6pt; padding: 8pt 16pt;
+  width: 480pt; border-left: 3pt solid #0E8388;
+}
+.step-box h3 {
+  color: #0E8388; font-size: 14pt; margin: 0 0 2pt 0;
+}
+.step-box p {
+  color: #CCDDEE; font-size: 11pt; margin: 0;
+}
+.arrow-container {
+  display: flex; justify-content: center;
+  margin-bottom: 4pt; width: 540pt;
+}
+.arrow {
+  width: 3pt; height: 10pt; background: #0E8388;
+  margin-left: 14pt;
+}
+.final-step .step-box {
+  border-left: 3pt solid #E76F51;
+  background: #2A3A5A;
+}
+.final-step .step-number {
+  background: #E76F51;
+}
+.final-step .step-box h3 {
+  color: #E76F51;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>How It Works</h1>
+  <div class="header-line"></div>
+</div>
+
+<div class="pipeline">
+  <div class="step">
+    <div class="step-number"><p>1</p></div>
+    <div class="step-box">
+      <h3>CLASSIFY</h3>
+      <p>HTTP method + path + body mapped to one of 27 event types</p>
+    </div>
+  </div>
+  <div class="arrow-container"><div class="arrow"></div></div>
+  <div class="step">
+    <div class="step-number"><p>2</p></div>
+    <div class="step-box">
+      <h3>EXTRACT</h3>
+      <p>Parse UCP JSON into structured fields (IDs, amounts, errors)</p>
+    </div>
+  </div>
+  <div class="arrow-container"><div class="arrow"></div></div>
+  <div class="step">
+    <div class="step-number"><p>3</p></div>
+    <div class="step-box">
+      <h3>WRITE</h3>
+      <p>Buffer events, batch at threshold (50), async streaming insert</p>
+    </div>
+  </div>
+  <div class="arrow-container"><div class="arrow"></div></div>
+  <div class="step final-step">
+    <div class="step-number"><p>4</p></div>
+    <div class="step-box">
+      <h3>BigQuery</h3>
+      <p>Partitioned by day, clustered by event_type + session + merchant</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
