@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #1B2A4A; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #1B2A4A; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  margin: 20pt 40pt 0 40pt;
+}
+.header h1 {
+  color: #FFFFFF; font-size: 24pt; margin: 0 0 4pt 0;
+}
+.header-line {
+  width: 60pt; height: 3pt; background: #0E8388;
+}
+.grid {
+  display: flex; flex-direction: row; flex-wrap: wrap;
+  margin: 10pt 36pt 0 36pt;
+}
+.category {
+  width: 200pt; margin: 4pt; background: #243554;
+  border-radius: 5pt; padding: 6pt 10pt;
+  border-top: 3pt solid #0E8388;
+}
+.category h3 {
+  color: #0E8388; font-size: 11pt; margin: 0 0 3pt 0;
+}
+.category ul {
+  color: #CCDDEE; font-size: 9pt; margin: 0; padding-left: 12pt;
+  line-height: 1.35;
+}
+.category ul li {
+  margin-bottom: 0;
+}
+.cat-checkout { border-top-color: #0E8388; }
+.cat-checkout h3 { color: #0E8388; }
+.cat-cart { border-top-color: #2AAA8A; }
+.cat-cart h3 { color: #2AAA8A; }
+.cat-order { border-top-color: #E76F51; }
+.cat-order h3 { color: #E76F51; }
+.cat-identity { border-top-color: #F4A261; }
+.cat-identity h3 { color: #F4A261; }
+.cat-payment { border-top-color: #E9C46A; }
+.cat-payment h3 { color: #E9C46A; }
+.cat-other { border-top-color: #8899AA; }
+.cat-other h3 { color: #8899AA; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>27 Event Types — Full UCP Coverage</h1>
+  <div class="header-line"></div>
+</div>
+
+<div class="grid">
+  <div class="category cat-checkout">
+    <h3>Checkout (6)</h3>
+    <ul>
+      <li>created</li>
+      <li>get</li>
+      <li>updated</li>
+      <li>escalation</li>
+      <li>completed</li>
+      <li>canceled</li>
+    </ul>
+  </div>
+  <div class="category cat-cart">
+    <h3>Cart (4)</h3>
+    <ul>
+      <li>created</li>
+      <li>get</li>
+      <li>updated</li>
+      <li>canceled</li>
+    </ul>
+  </div>
+  <div class="category cat-order">
+    <h3>Order (6)</h3>
+    <ul>
+      <li>created</li>
+      <li>updated</li>
+      <li>shipped</li>
+      <li>delivered</li>
+      <li>returned</li>
+      <li>canceled</li>
+    </ul>
+  </div>
+  <div class="category cat-identity">
+    <h3>Identity (3)</h3>
+    <ul>
+      <li>initiated</li>
+      <li>completed</li>
+      <li>revoked</li>
+    </ul>
+  </div>
+  <div class="category cat-payment">
+    <h3>Payment (4)</h3>
+    <ul>
+      <li>negotiated</li>
+      <li>selected</li>
+      <li>completed</li>
+      <li>failed</li>
+    </ul>
+  </div>
+  <div class="category cat-other">
+    <h3>Discovery + Fallback (4)</h3>
+    <ul>
+      <li>profile_discovered</li>
+      <li>capability_negotiated</li>
+      <li>request</li>
+      <li>error</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

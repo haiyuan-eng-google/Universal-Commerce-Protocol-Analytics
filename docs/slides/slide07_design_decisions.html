@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #1B2A4A; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #1B2A4A; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  margin: 24pt 40pt 0 40pt;
+}
+.header h1 {
+  color: #FFFFFF; font-size: 26pt; margin: 0 0 4pt 0;
+}
+.header-line {
+  width: 60pt; height: 3pt; background: #0E8388; margin: 0 0 0 0;
+}
+.table-area {
+  margin: 16pt 40pt 0 40pt;
+}
+.row {
+  display: flex; flex-direction: row;
+  margin-bottom: 4pt;
+}
+.row-label {
+  width: 140pt; background: #0E8388; border-radius: 4pt 0 0 4pt;
+  padding: 8pt 12pt;
+}
+.row-label p {
+  color: #FFFFFF; font-size: 11pt; font-weight: bold; margin: 0;
+}
+.row-value {
+  width: 490pt; background: #243554; border-radius: 0 4pt 4pt 0;
+  padding: 8pt 12pt;
+}
+.row-value p {
+  color: #CCDDEE; font-size: 11pt; margin: 0;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Key Design Decisions</h1>
+  <div class="header-line"></div>
+</div>
+
+<div class="table-area">
+  <div class="row">
+    <div class="row-label"><p>Storage</p></div>
+    <div class="row-value"><p><span style="color: #FFFFFF; font-weight: bold;">BigQuery</span> — GCP native, handles petabyte scale, SQL-native analytics</p></div>
+  </div>
+  <div class="row">
+    <div class="row-label"><p>Capture</p></div>
+    <div class="row-value"><p><span style="color: #FFFFFF; font-weight: bold;">Passive observer</span> — zero changes to existing UCP server or client code</p></div>
+  </div>
+  <div class="row">
+    <div class="row-label"><p>Batching</p></div>
+    <div class="row-value"><p><span style="color: #FFFFFF; font-weight: bold;">Async buffer (default 50)</span> — never slows HTTP request/response cycle</p></div>
+  </div>
+  <div class="row">
+    <div class="row-label"><p>Fire-and-forget</p></div>
+    <div class="row-value"><p><span style="color: #FFFFFF; font-weight: bold;">Background tasks</span> — analytics failures never block commerce transactions</p></div>
+  </div>
+  <div class="row">
+    <div class="row-label"><p>Transports</p></div>
+    <div class="row-value"><p><span style="color: #FFFFFF; font-weight: bold;">REST + MCP + A2A</span> — all 3 UCP communication modes supported</p></div>
+  </div>
+  <div class="row">
+    <div class="row-label"><p>Partial failure</p></div>
+    <div class="row-value"><p><span style="color: #FFFFFF; font-weight: bold;">Retries failed rows</span> — minimizes duplication and data loss risk</p></div>
+  </div>
+  <div class="row">
+    <div class="row-label"><p>PII</p></div>
+    <div class="row-value"><p><span style="color: #FFFFFF; font-weight: bold;">Optional redaction</span> — configurable per deployment, no PCI-scope data stored</p></div>
+  </div>
+</div>
+</body>
+</html>

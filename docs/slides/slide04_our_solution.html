@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #1B2A4A; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #1B2A4A; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  margin: 28pt 40pt 0 40pt;
+}
+.header h1 {
+  color: #FFFFFF; font-size: 28pt; margin: 0 0 4pt 0;
+}
+.header-line {
+  width: 60pt; height: 3pt; background: #0E8388; margin: 0 0 0 0;
+}
+.tagline {
+  margin: 16pt 40pt 0 40pt;
+}
+.tagline-box {
+  background: #243554; border-radius: 6pt; padding: 10pt 20pt;
+  border-left: 4pt solid #0E8388;
+}
+.tagline-box p {
+  color: #CCDDEE; font-size: 13pt; margin: 0;
+}
+.integrations {
+  display: flex; flex-direction: row;
+  margin: 22pt 40pt 0 40pt;
+}
+.card {
+  width: 200pt; margin-right: 20pt; background: #243554;
+  border-radius: 8pt; padding: 16pt;
+  border-top: 3pt solid #0E8388;
+}
+.card:last-child { margin-right: 0; }
+.card h3 {
+  color: #0E8388; font-size: 13pt; margin: 0 0 6pt 0;
+}
+.card p {
+  color: #CCDDEE; font-size: 11pt; margin: 0 0 8pt 0;
+  line-height: 1.4;
+}
+.effort-tag {
+  background: #0E8388; border-radius: 4pt; padding: 4pt 10pt;
+  width: 100pt;
+}
+.effort-tag p {
+  color: #FFFFFF; font-size: 10pt; margin: 0;
+  text-align: center; font-weight: bold;
+}
+.bottom-note {
+  margin: 22pt 40pt 0 40pt;
+}
+.note-box {
+  background: #0E8388; border-radius: 6pt; padding: 10pt 20pt;
+}
+.note-box p {
+  color: #FFFFFF; font-size: 13pt; margin: 0;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>UCP Analytics</h1>
+  <div class="header-line"></div>
+</div>
+
+<div class="tagline">
+  <div class="tagline-box">
+    <p>Drop in a middleware or hook — <span style="font-weight: bold; color: #FFFFFF;">no business-logic changes</span> — structured commerce analytics in BigQuery</p>
+  </div>
+</div>
+
+<div class="integrations">
+  <div class="card">
+    <h3>FastAPI Middleware</h3>
+    <p>Merchant-side capture. Intercepts all UCP requests and responses automatically.</p>
+    <div class="effort-tag">
+      <p>2 lines of code</p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>HTTPX Event Hook</h3>
+    <p>Agent/platform-side capture. Hooks into outbound HTTP calls to merchants.</p>
+    <div class="effort-tag">
+      <p>3 lines of code</p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>ADK Plugin</h3>
+    <p>Google ADK integration. Plugin configuration for agent framework users.</p>
+    <div class="effort-tag">
+      <p>Plugin config</p>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-note">
+  <div class="note-box">
+    <p>All three integrations share the same tracker and write to the same BigQuery table</p>
+  </div>
+</div>
+</body>
+</html>

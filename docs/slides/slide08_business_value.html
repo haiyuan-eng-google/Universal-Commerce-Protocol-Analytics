@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #1B2A4A; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #1B2A4A; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  margin: 24pt 40pt 0 40pt;
+}
+.header h1 {
+  color: #FFFFFF; font-size: 26pt; margin: 0 0 4pt 0;
+}
+.header-line {
+  width: 60pt; height: 3pt; background: #0E8388; margin: 0 0 0 0;
+}
+.cards {
+  display: flex; flex-direction: row; flex-wrap: wrap;
+  margin: 16pt 34pt 0 34pt;
+}
+.card {
+  width: 196pt; margin: 6pt; background: #243554;
+  border-radius: 6pt; padding: 12pt 14pt;
+  border-left: 3pt solid #0E8388;
+}
+.card h3 {
+  color: #0E8388; font-size: 12pt; margin: 0 0 4pt 0;
+}
+.card p {
+  color: #CCDDEE; font-size: 10pt; margin: 0;
+  line-height: 1.4;
+}
+.card-highlight { border-left-color: #E76F51; }
+.card-highlight h3 { color: #E76F51; }
+.bottom-note {
+  margin: 14pt 40pt 0 40pt;
+}
+.note-box {
+  background: #0E8388; border-radius: 6pt; padding: 8pt 20pt;
+}
+.note-box p {
+  color: #FFFFFF; font-size: 13pt; margin: 0;
+  text-align: center; font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>What This Enables</h1>
+  <div class="header-line"></div>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <h3>Checkout Funnel</h3>
+    <p>Created to completed conversion rate. Identify drop-off stages.</p>
+  </div>
+  <div class="card card-highlight">
+    <h3>Revenue by Merchant</h3>
+    <p>GMV tracking per merchant host, currency, and time period.</p>
+  </div>
+  <div class="card">
+    <h3>Latency Percentiles</h3>
+    <p>p50 / p95 / p99 response times per UCP operation type.</p>
+  </div>
+  <div class="card">
+    <h3>Error Analysis</h3>
+    <p>Error code frequency, escalation patterns, resolution rates.</p>
+  </div>
+  <div class="card card-highlight">
+    <h3>Payment Mix</h3>
+    <p>Transaction volume by payment handler and card brand.</p>
+  </div>
+  <div class="card">
+    <h3>Capability Adoption</h3>
+    <p>Features per merchant: which UCP extensions are live.</p>
+  </div>
+</div>
+
+<div class="bottom-note">
+  <div class="note-box">
+    <p>10 ready-to-use BigQuery queries included</p>
+  </div>
+</div>
+</body>
+</html>
