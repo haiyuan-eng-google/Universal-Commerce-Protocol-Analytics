@@ -75,7 +75,7 @@ That's duplicated work across the entire ecosystem.
 
 ### The One-Liner
 
-> Drop in a middleware or hook — zero changes to existing UCP code —
+> Drop in a middleware or hook — no business-logic changes to existing UCP code —
 > and get structured commerce analytics in BigQuery.
 
 ### Three Integration Points
@@ -183,11 +183,11 @@ HTTP Request/Response
 | Decision | What We Chose | Why |
 |---|---|---|
 | **Storage** | BigQuery | Already in GCP ecosystem, handles scale, SQL-native |
-| **Capture method** | Passive observer | Zero changes to existing UCP code |
+| **Capture method** | Passive observer | No business-logic changes to existing UCP code |
 | **Batching** | Async buffer (default 50) | Don't slow down HTTP responses |
 | **Fire-and-forget** | Background tasks | Analytics never blocks commerce |
 | **3 transports** | REST + MCP + A2A | Cover all UCP communication modes |
-| **Partial failure** | Requeue only failed rows | Don't duplicate successful writes |
+| **Partial failure** | Retry failed rows only | Minimizes duplication and data loss risk |
 | **PII handling** | Optional redaction | Configurable per deployment |
 
 ### BigQuery Table Design
@@ -239,7 +239,10 @@ SELECT
     DATE(timestamp) AS day,
     COUNT(CASE WHEN event_type = 'checkout_session_created'   THEN 1 END) AS started,
     COUNT(CASE WHEN event_type = 'checkout_session_completed' THEN 1 END) AS completed,
-    SAFE_DIVIDE(completed, started) AS conversion_rate
+    SAFE_DIVIDE(
+        COUNT(CASE WHEN event_type = 'checkout_session_completed' THEN 1 END),
+        COUNT(CASE WHEN event_type = 'checkout_session_created'   THEN 1 END)
+    ) AS conversion_rate
 FROM `project.ucp_analytics.ucp_events`
 GROUP BY day
 ORDER BY day DESC;
